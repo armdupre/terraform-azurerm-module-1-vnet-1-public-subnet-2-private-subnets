@@ -44,5 +44,6 @@ output "Vnet" {
 	description = "Vnet resource associated with the virtual network"
 	value = {
 		"id" : azurerm_virtual_network.Vnet.id
+		"name" : azurerm_virtual_network.Vnet.name
 	}
 }

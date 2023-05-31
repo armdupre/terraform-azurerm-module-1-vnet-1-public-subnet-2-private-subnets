@@ -1,6 +1,5 @@
-variable "AppTag" {
-	default = "example"
-	description = "App ID tag of application using the deployment"
+variable "InstanceId" {
+	default = "vnet"
 	type = string
 }
 
@@ -35,6 +34,12 @@ variable "ResourceGroupLocation" {
 
 variable "ResourceGroupName" {
 	description = "Name of the Resource Group to create in which to deploy resources"
+	type = string
+}
+
+variable "Tag" {
+	default = "example"
+	description = "App ID tag of application using the deployment"
 	type = string
 }
 

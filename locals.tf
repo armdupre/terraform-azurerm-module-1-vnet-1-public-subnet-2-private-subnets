@@ -1,23 +1,25 @@
 locals {
-	AppTag = var.AppTag
-	Private1NetworkSecurityGroupName = "${local.UserLoginTag}-${local.AppTag}-private1-network-security-group"
-	Private1SubnetName = "${local.UserLoginTag}-${local.AppTag}-vnet-private1-subnet"
+	InstanceId = var.InstanceId
+	Preamble = "${local.UserLoginTag}-${local.Tag}-${local.InstanceId}"
+	Private1NetworkSecurityGroupName = "${local.Preamble}-private1-nsg"
+	Private1SubnetName = "${local.Preamble}-private1-subnet"
 	Private1SubnetPrefix = var.Private1SubnetPrefix
-	Private2NetworkSecurityGroupName = "${local.UserLoginTag}-${local.AppTag}-private2-network-security-group"
-	Private2SubnetName = "${local.UserLoginTag}-${local.AppTag}-vnet-private2-subnet"
+	Private2NetworkSecurityGroupName = "${local.Preamble}-private2-nsg"
+	Private2SubnetName = "${local.Preamble}-private2-subnet"
 	Private2SubnetPrefix = var.Private2SubnetPrefix
-	PublicHttpSecurityRuleName = "${local.UserLoginTag}-${local.AppTag}-web-rule"
-	PublicHttpsSecurityRuleName = "${local.UserLoginTag}-${local.AppTag}-https-rule"
-	PublicNetworkSecurityGroupName = "${local.UserLoginTag}-${local.AppTag}-network-security-group"
+	PublicHttpSecurityRuleName = "${local.Preamble}-http-rule"
+	PublicHttpsSecurityRuleName = "${local.Preamble}-https-rule"
+	PublicNetworkSecurityGroupName = "${local.Preamble}-public-nsg"
 	PublicSecurityRuleSourceIpPrefix = var.PublicSecurityRuleSourceIpPrefix
-	PublicSshSecurityRuleName = "${local.UserLoginTag}-${local.AppTag}-ssh-rule"
-	PublicSubnetName = "${local.UserLoginTag}-${local.AppTag}-vnet-public-subnet"
+	PublicSshSecurityRuleName = "${local.Preamble}-ssh-rule"
+	PublicSubnetName = "${local.Preamble}-public-subnet"
 	PublicSubnetPrefix = var.PublicSubnetPrefix
 	ResourceGroupLocation = var.ResourceGroupLocation
 	ResourceGroupName = var.ResourceGroupName
+	Tag = var.Tag
 	UserEmailTag = var.UserEmailTag
 	UserLoginTag = var.UserLoginTag
 	UserProjectTag = var.UserProjectTag
 	VnetAddressPrefix = var.VnetAddressPrefix
-	VnetName = "${local.UserLoginTag}-${local.AppTag}-vnet"
+	VnetName = "${local.Preamble}-vnet"
 }
