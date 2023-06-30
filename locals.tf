@@ -1,6 +1,6 @@
 locals {
 	InstanceId = var.InstanceId
-	Preamble = "${local.UserLoginTag}-${local.Tag}-${local.InstanceId}"
+	Preamble = "${local.UserLoginTag}-${local.Tag}-${local.Version}-${local.InstanceId}"
 	Private1NetworkSecurityGroupName = "${local.Preamble}-private1-nsg"
 	Private1SubnetName = "${local.Preamble}-private1-subnet"
 	Private1SubnetPrefix = var.Private1SubnetPrefix
@@ -20,6 +20,7 @@ locals {
 	UserEmailTag = var.UserEmailTag
 	UserLoginTag = var.UserLoginTag
 	UserProjectTag = var.UserProjectTag
+	Version = var.Version
 	VnetAddressPrefix = var.VnetAddressPrefix
 	VnetName = "${local.Preamble}-vnet"
 }
