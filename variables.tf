@@ -15,9 +15,9 @@ variable "Private2SubnetPrefix" {
 	type = string
 }
 
-variable "PublicSecurityRuleSourceIpPrefix" {
-	description = "IP Address /32 or IP CIDR range connecting inbound to App"
-	type = string
+variable "PublicSecurityRuleSourceIpPrefixes" {
+	description = "List of IP Addresses /32 or IP CIDR ranges connecting inbound to App"
+	type = list(string)
 }
 
 variable "PublicSubnetPrefix" {

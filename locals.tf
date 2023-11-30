@@ -10,7 +10,7 @@ locals {
 	PublicHttpSecurityRuleName = "${local.Preamble}-http-rule"
 	PublicHttpsSecurityRuleName = "${local.Preamble}-https-rule"
 	PublicNetworkSecurityGroupName = "${local.Preamble}-public-nsg"
-	PublicSecurityRuleSourceIpPrefix = var.PublicSecurityRuleSourceIpPrefix
+	PublicSecurityRuleSourceIpPrefixes = var.PublicSecurityRuleSourceIpPrefixes
 	PublicSshSecurityRuleName = "${local.Preamble}-ssh-rule"
 	PublicSubnetName = "${local.Preamble}-public-subnet"
 	PublicSubnetPrefix = var.PublicSubnetPrefix
