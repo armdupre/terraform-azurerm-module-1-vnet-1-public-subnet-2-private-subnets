@@ -9,7 +9,7 @@ This module creates a topology with a single virtual network having a single pub
 ## Usage
 ```tf
 module "vnet" {
-    source = "armdupre/module-1-vnet-1-public-subnet-2-private-subnets/azurerm"
+    source = "git::https://github.com/armdupre/terraform-azurerm-module-1-vnet-1-public-subnet-2-private-subnets.git"
     PublicSecurityRuleSourceIpPrefixes = [ "1.1.1.1/32" ]
     ResourceGroupName = azurerm_resource_group.ResourceGroup.name
 }
